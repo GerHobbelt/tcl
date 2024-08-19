@@ -139,8 +139,8 @@ int main(int argc, char **argv)
         fprintf(stderr, "puff() failed with return code %d\n", ret);
     else {
         fprintf(stderr, "puff() succeeded uncompressing %lu bytes\n", destlen);
-        if (sourcelen < len) fprintf(stderr, "%lu compressed bytes unused\n",
-                                     len - sourcelen);
+        if (sourcelen < len) fprintf(stderr, "%zu compressed bytes unused\n",
+                                     (size_t)(len - sourcelen));
     }
 
     /* if requested, inflate again and write decompressed data to stdout */
